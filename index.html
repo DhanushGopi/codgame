@@ -8,6 +8,37 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Baloo+Thambi+2:wght@600;800&family=Bungee&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<link rel="shortcut icon" href="./dglogowhite.svg" type="image/x-icon">
+
+<!-- Open Graph / Social Preview -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://dhanushgopi.github.io/" />
+<meta property="og:title" content="Veeramani: COD Sambavam | A Cash-on-Delivery Chase" />
+<meta
+  property="og:description"
+  content="Followers sent a fridge, a TV & a military tank. Pay on delivery, machan! A 3D endless runner game created by Dhanush Gopi."
+/>
+<meta
+  property="og:image"
+  content="https://dhanushgopi.github.io/ogimage.jpg"
+/>
+<meta property="og:image:alt" content="Veeramani: COD Sambavam Game Preview" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://dhanushgopi.github.io/" />
+<meta name="twitter:title" content="Veeramani: COD Sambavam | A Cash-on-Delivery Chase" />
+<meta
+  name="twitter:description"
+  content="Followers sent a fridge, a TV & a military tank. Pay on delivery, machan! A 3D endless runner game created by Dhanush Gopi."
+/>
+<meta
+  name="twitter:image"
+  content="https://dhanushgopi.github.io/ogimage.jpg"
+/>
+<meta name="twitter:image:alt" content="Veeramani: COD Sambavam Game Preview" />
+
 <style>
 :root {
   color-scheme: dark;
@@ -181,7 +212,7 @@ img { max-width: 100%; }
 #fatal { background: var(--ink); z-index: 6; }
 .modal { z-index: 3; }
 
-.menu-inner { display: flex; flex-direction: column; align-items: center; gap: 16px; width: 100%; max-width: 420px; text-align: center; }
+.menu-inner { display: flex; flex-direction: column; align-items: center; gap: 16px; width: 100%; max-width: 420px; text-align: center; margin-top: 36px; }
 .kicker { font-size: 11px; color: var(--marigold); margin: 0; }
 .logo { margin: 0; display: flex; flex-direction: column; align-items: center; }
 .logo .tamil { font-size: clamp(1.1rem, 5vw, 1.5rem); color: var(--cream); margin-bottom: 2px; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5); }
@@ -212,6 +243,27 @@ img { max-width: 100%; }
 .row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .best { margin: 4px 0 0; font-size: 12px; color: var(--muted); }
 .best b { color: var(--marigold); font-size: 15px; margin-left: 4px; font-variant-numeric: tabular-nums; }
+
+/* Marquee Notice Bar */
+.awareness-marquee {
+  position: absolute;
+  top: 46px;
+  left: 0;
+  width: 100%;
+  background: rgba(230, 59, 46, 0.9);
+  color: #fff4dc;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  z-index: 20;
+}
+.awareness-marquee marquee {
+  width: 100%;
+}
 
 /* Credits Footer */
 .credits-footer {
@@ -438,6 +490,9 @@ img { max-width: 100%; }
   <div id="count" class="count" hidden aria-live="assertive"></div>
   <section id="menu" class="screen menu" aria-labelledby="menuTitle">
     <div class="garland" aria-hidden="true"></div>
+    <div class="awareness-marquee">
+      <marquee scrollamount="6">Please, guys! This game is designed to raise awareness about the misuse of Cash on Delivery (COD), not to encourage pranks. While the game is meant for entertainment, it does not promote or appreciate the practice of placing COD orders as a joke or for fun. Let's use this game to spread awareness and encourage responsible online shopping. |  நண்பர்களே! இந்த விளையாட்டு COD முறையைத் தவறாகப் பயன்படுத்துவது குறித்த விழிப்புணர்வுக்காக மட்டுமே. பொழுதுபோக்கிற்காக COD ஆர்டர் செய்து குறும்பு செய்வதை இது ஆதரிக்கவில்லை. விழிப்புணர்வுடன் செயல்படுவோம்!</marquee>
+    </div>
     <div class="menu-inner">
       <p class="kicker">A cash-on-delivery chase</p>
       <h1 id="menuTitle" class="logo">
