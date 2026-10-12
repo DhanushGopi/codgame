@@ -12,6 +12,16 @@
 <link rel="shortcut icon" href="./dglogowhite.svg" type="image/x-icon">
 
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRP8KLCSGE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RRP8KLCSGE');
+</script>
+
 
 <!-- Open Graph / Social Preview -->
 <meta property="og:type" content="website" />
@@ -1809,7 +1819,23 @@ img { max-width: 100%; }
       'menu', 'pause', 'over', 'howto', 'menuBest', 'overScore', 'overDist', 'overSweets', 'overBest',
       'hitName', 'hitPrice', 'orderNo', 'overLine', 'newBest', 'sweetsBox', 'hudMile', 'flash'
     ].forEach(function (id) { el[id] = $(id); });
-    function on(id, fn) { $(id).addEventListener('click', function () { V.Audio.play('click'); fn(); }); }
+    
+    function on(id, fn) { 
+      $(id).addEventListener('click', function () { 
+        V.Audio.play('click'); 
+        
+        // Google Analytics Event Tracking for the Play Button
+        if (id === 'btnPlay' && typeof gtag === 'function') {
+          gtag('event', 'game_start', {
+            'event_category': 'Engagement',
+            'event_label': 'Play Button Clicked'
+          });
+        }
+
+        fn(); 
+      }); 
+    }
+
     on('btnPlay', h.play);
     on('btnHow', function () { U.howto(true); });
     on('btnHowClose', function () { U.howto(false); });
